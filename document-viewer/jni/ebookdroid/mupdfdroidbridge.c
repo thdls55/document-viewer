@@ -1028,3 +1028,11 @@ JNI_FN(MuPdfOutline_getChild)(JNIEnv *env, jclass clazz, jlong outlinehandle)
 //	DEBUG("MuPdfOutline_getChild(%p)",outline);
     return (jlong)(uintptr_t)(outline?outline->down:NULL);
 }
+
+JNIEXPORT void JNICALL
+JNI_FN(MuPdfDocument_setFontEm)(JNIEnv *env, jclass clazz, jlong handle, jint em)
+{
+    renderdocument_t *doc = (renderdocument_t*) (long) handle;
+    DEBUG("MuPdfDocument_setFontEm");
+    fz_layout_document(doc->ctx, doc->document, 450, 600, em);
+}

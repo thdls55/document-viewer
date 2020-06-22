@@ -153,6 +153,10 @@ public class AppSettings implements AppPreferences, BookPreferences, IBackupAgen
 
     public final boolean slowCMYK;
 
+    /* =============== EPUB Format-specific settings =============== */
+
+    public final int epubFontEm;
+
     /* =============================================== */
 
     private AppSettings() {
@@ -222,6 +226,8 @@ public class AppSettings implements AppPreferences, BookPreferences, IBackupAgen
         xDpi = PDF_CUSTOM_XDPI.getPreferenceValue(prefs);
         yDpi = PDF_CUSTOM_YDPI.getPreferenceValue(prefs);
         slowCMYK = PDF_SLOW_CMYK.getPreferenceValue(prefs);
+        /* =============== EPUB Format-specific settings =============== */
+        epubFontEm = EPUB_FONT_EM.getPreferenceValue(prefs);
     }
 
     /* =============== UI settings =============== */
@@ -443,6 +449,7 @@ public class AppSettings implements AppPreferences, BookPreferences, IBackupAgen
         private static final int D_AllowedFileTypes = 0x0001 << 15;
         private static final int D_TapConfigChanged = 0x0001 << 16;
         private static final int D_KeyBindingChanged = 0x0001 << 17;
+        private static final int D_EpubFontEm = 0x0001 << 18;
 
         private int mask;
         private final boolean firstTime;
@@ -496,6 +503,9 @@ public class AppSettings implements AppPreferences, BookPreferences, IBackupAgen
                 }
                 if (!olds.keysBinding.equals(news.keysBinding)) {
                     mask |= D_KeyBindingChanged;
+                }
+                if(olds.epubFontEm != news.epubFontEm) {
+                    mask |= D_EpubFontEm;
                 }
             }
         }
@@ -574,6 +584,10 @@ public class AppSettings implements AppPreferences, BookPreferences, IBackupAgen
 
         public boolean isKeyBindingChanged() {
             return 0 != (mask & D_KeyBindingChanged);
+        }
+
+        public boolean isEpubFontEmChanged() {
+            return 0 != (mask & D_EpubFontEm);
         }
     }
 }

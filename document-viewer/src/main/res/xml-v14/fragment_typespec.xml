@@ -55,4 +55,19 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="brfiletypespecificepub"
+        android:summary="@string/pref_brfiletypespecificepub_summary"
+        android:title="@string/pref_brfiletypespecificepub_title" >
+
+        <org.emdev.ui.preference.SeekBarPreference
+            android:defaultValue="@string/pref_epub_font_em_defvalue"
+            android:key="@string/pref_epub_font_em_id"
+            ebookdroid:minValue="@string/pref_epub_font_em_minvalue"
+            ebookdroid:maxValue="@string/pref_epub_font_em_maxvalue"
+            android:summary="@string/pref_epub_font_em_summary"
+            android:title="@string/pref_epub_font_em_title" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

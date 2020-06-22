@@ -74,6 +74,10 @@ public class MuPdfDocument extends AbstractCodecDocument {
         }
     }
 
+    public void setFontEm(int em) {
+        setFontEm(documentHandle, em);
+    }
+
     native static int getPageInfo(long docHandle, int pageNumber, CodecPageInfo cpi);
 
     private static native long open(int storememory, int format, String fname, String pwd);
@@ -81,4 +85,7 @@ public class MuPdfDocument extends AbstractCodecDocument {
     private static native void free(long handle);
 
     private static native int getPageCount(long handle);
+
+    private static native void setFontEm(long handle, int em);
+
 }

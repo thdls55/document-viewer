@@ -988,6 +988,10 @@ public class ViewerActivityController extends AbstractActivityController<ViewerA
             getDocumentController().updateMemorySettings();
         }
 
+        if (diff.isEpubFontEmChanged()) {
+            goUp();
+        }
+
         UIManagerAppCompat.invalidateOptionsMenu(getManagedComponent());
     }
 

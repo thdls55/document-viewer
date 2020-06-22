@@ -190,4 +190,9 @@ public interface AppPreferences {
 
     BooleanPreferenceDefinition PDF_SLOW_CMYK = new BooleanPreferenceDefinition(pref_slowcmyk_id,
             pref_slowcmyk_defvalue);
+
+    /* =============== EPUB Format-specific settings =============== */
+
+    IntegerPreferenceDefinition EPUB_FONT_EM = new IntegerPreferenceDefinition(pref_epub_font_em_id,
+            pref_epub_font_em_defvalue, pref_epub_font_em_minvalue, pref_epub_font_em_maxvalue);
 }

@@ -75,4 +75,11 @@
 
     <string name="pref_fb2cacheimages_title">Cache images on disk</string>
     <string name="pref_fb2cacheimages_summary">Temporary store document images on disk to reduce memory usage</string>
+
+    <string name="pref_brfiletypespecificepub_title">EPUB</string>
+    <string name="pref_brfiletypespecificepub_summary">EPUB format specific settings</string>
+
+    <string name="pref_epub_font_em_title">"Font size"</string>
+    <string name="pref_epub_font_em_summary">"Font size"</string>
+
 </resources>
